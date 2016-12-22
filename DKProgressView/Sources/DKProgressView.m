@@ -66,9 +66,13 @@
 {
     [super layoutSubviews];
     
+    // 一般圆圈最多8个
     _dk_CircleTotalNumber = _dk_CircleTotalNumber < 8 ? _dk_CircleTotalNumber : 8;
+    // 完成数量最少1个，不能0个
     _dk_CircleCompletedNumber = _dk_CircleCompletedNumber < 1 ? 1 : _dk_CircleCompletedNumber;
+    // 圆圈的直径，取视图宽度和高度的最小值然后减去上下间隔20
     widthForCircle = MIN(self.frame.size.width, self.frame.size.height) - 20.f;
+    // 根据圆圈的直径和视图的宽度计算中间线段的长度
     widthForLine = (self.frame.size.width - 20.f - _dk_CircleTotalNumber * widthForCircle) / (_dk_CircleTotalNumber - 1);
     switch (progressType) {
         case DKProgressTypeOnlyCircle:

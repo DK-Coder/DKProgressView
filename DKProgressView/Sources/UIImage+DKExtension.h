@@ -10,5 +10,8 @@
 
 @interface UIImage (DKExtension)
 
+/**
+ *  将图片变换颜色，比较适用于大面积的纯色图片或者纯色图片。该方法会触发离屏渲染，慎用！
+ */
 - (UIImage *)changeColorTo:(UIColor *)color;
 @end
